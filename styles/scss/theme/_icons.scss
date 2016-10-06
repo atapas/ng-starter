@@ -1,0 +1,154 @@
+// ----------------------------
+// Typography
+// ----------------------------
+
+// Icon font - Common icons
+
+@include font-face("common-icons", "../../fonts/common-icons", $file-formats: ttf svg eot woff);
+
+
+[data-icon]:before {
+  font-family: "common-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none !important;
+}
+[class*="icon"]:before,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "common-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none !important;
+}
+
+
+// Icons
+
+.icon {
+  padding: 0 .2em;
+  vertical-align: inherit;
+  &:hover {
+    text-decoration: none !important;
+  }
+  .btn-link & {
+    vertical-align: middle;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .icon { vertical-align: text-top; margin-right: 14px; }
+}
+
+
+// Other Icons
+.icon-plus:before {
+  content: "a";
+}
+.icon-cross:before {
+  content: "d";
+}
+.icon-pencil:before {
+  content: "c";
+}
+.icon-save:before {
+  content: "b";
+}
+.icon-cancel:before {
+  content: "e";
+}
+.icon-refresh:before {
+  content: "f";
+}
+.icon-close:before {
+  content: "g";
+}
+.icon-search:before {
+  content: "h";
+}
+.icon-email:before {
+  content: "i";
+}
+.icon-configure:before {
+  content: "j";
+}
+.icon-details:before {
+  content: "k";
+}
+.icon-add-folder:before {
+  content: "l";
+}
+.icon-help:before {
+  content: "n";
+}
+.icon-user:before {
+  content: "m";
+}
+.icon-folder-close:before {
+  content: "o";
+}
+.icon-folder-open:before {
+  content: "p";
+}
+.icon-folder-solid-close:before {
+  content: "q";
+}
+.icon-folder-solid-open:before {
+  content: "r";
+}
+.icon-plus-square:before {
+  content: "s";
+}
+.icon-minus-square:before {
+  content: "t";
+}
+.icon-settings:before {
+  content: "u";
+}
+.icon-install:before {
+  content: "v";
+}
+.icon-delete:before {
+  content: "w";
+}
+.icon-arrow-next:before {
+  content: "y";
+}
+.icon-arrow-previous:before {
+  content: "z";
+}
+.icon-success:before {
+  content: "x";
+}
+.icon-warning:before {
+  content: "A";
+}
+.icon-info:before {
+  content: "B";
+}
+.icon-copy:before {
+  content: "C";
+}
+.icon-move:before {
+  content: "D";
+}
+.icon-key:before {
+  content: "E";
+}
+.icon-circle:before {
+  content: "F";
+}
+.icon-circle-selected:before {
+  content: "G";
+}

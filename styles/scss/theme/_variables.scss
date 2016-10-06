@@ -1,0 +1,94 @@
+// Typography
+/* $base-font-regular-url: '../../fonts/Montserrat-Regular'; */
+/* $base-font-bold-url: '../../fonts/Montserrat-Bold'; */
+$base-font-regular-url: 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic';
+@import url($base-font-regular-url);
+$base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+$theme-font-size-base:		14px !default;
+$theme-font-size-medium: 	ceil(($theme-font-size-base * 1.12)) !default; 
+$theme-font-size-large: 	ceil(($theme-font-size-base * 1.30)) !default; 
+$theme-font-size-small: 	ceil(($theme-font-size-base * 0.90)) !default; 
+
+$theme-line-height-base:	1.428571429 !default;
+$theme-line-height-large:   1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$theme-line-height-small:   1.5 !default;
+
+$theme-font-weight-normal: 	400 !default;
+$theme-font-weight-bold: 	700 !default;
+
+
+// Theme Colors
+
+// Primary Colors
+$color-primary-blue:                    #0078EF;
+$color-dark-blue:                       #271782;
+$color-dark-blue-alt:                   #1e214e;
+$color-blue:                            #01a9e7;
+$color-blue-alt:                        #007cd0;
+$color-light-blue:                      #29ceff;
+$color-light-blue-alt:                  #0db1dd;
+$color-turquoise:                       #3ddcca;
+$color-turquoise-alt:                   #03b5af;
+$color-aqua:                            #1ffbba;
+$color-aqua-alt:                        #00d78e;
+
+
+// Secondary Colors
+$color-gold:                            #f1c40f;
+$color-orange:                          #f39c12;
+$color-red:                             #d1281b;
+$color-purple:                          #914e8b;
+$color-magenta:                         #c6325a;
+
+$color-violet:                          #56176c;
+$color-purple:                          #8457b6;
+$color-pink:                            #df287c;
+$color-bright-green:                    #15db66;
+$color-green-yellow:                    #90f170;
+$color-orange:                          #f17e12;
+$color-red:                             #dc233f;
+$color-conifer:                         #abe569;
+
+
+// Neutrals
+$color-black:                           #000000;
+$color-grey-8:                          #2c3d45;
+$color-grey-7:                          #3d515c;
+$color-grey-6:                          #6a7c87;
+$color-grey-5:                          #9dabac;
+$color-light-grey:                      #d4d6da;
+$color-very-light-grey:                 #e8eae9;
+$color-super-light-grey:                #f5f5f5;
+$color-extreme-light-grey:              #fafafa;
+$color-white:                           #ffffff;
+
+
+// Body colors
+$theme-body-bg:             $color-very-light-grey;
+
+// Text Colors
+$color-primary-text:        $color-grey-8;
+$color-secondary-text:      $color-grey-7;
+
+// Spacers
+$spacing-xs:    4px;
+$spacing-sm:    8px;
+$spacing-base:  16px;
+$spacing-md:    24px;
+$spacing-lg:    32px;
+$spacing-xl:    48px;
+$spacing-xxl:   64px;
+
+
+// Border Radius
+$border-radius-base:        4px !default;
+$border-radius-lg:       6px !default;
+$border-radius-sm:       3px !default;
+
+
+// Grphics media or images
+$theme-image-path:'../images/theme/';
+$theme-bg-login-image: $theme-image-path + 'img-login.png';
+$theme-login-logo-image: $theme-image-path + 'img-login-logo.png';
+$theme-main-logo-image: $theme-image-path + 'img-main-logo.png';

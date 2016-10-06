@@ -1,0 +1,16 @@
+*.sublime-*
+scripts
+fonts
+images
+node_modules
+styles
+views
+.sass-cache
+.npmignore
+config.json
+favicon.ico
+Gruntfile.js
+index-debug.html
+index.html
+package.bat
+package.sh

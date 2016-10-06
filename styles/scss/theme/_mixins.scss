@@ -1,0 +1,271 @@
+// --------------------------
+// Mixins
+// --------------------------
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 16) + px;
+  font-size: $sizeValue + rem;
+}
+
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Custom Scrollbar
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar-track
+  {
+    border-radius: 10px;
+    background-color: $theme-white;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 8px;
+    @include appearance(none);
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    border:solid 1px lighten($theme-pcolor-black, 50%);
+    background-color: lighten($theme-pcolor-black, 60%);
+  }
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+  clear: both;
+}
+
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+@mixin border-radius($radius, $imp:false) {
+  @if $imp {
+    -webkit-border-radius: $radius !important;
+    border-radius: $radius  !important;
+  } @else {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;  
+  }
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+
+
+// Placeholder text color
+@mixin placeholdertext-color($element,$color) {
+  #{$element}::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  #{$element}:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+
+  #{$element}::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;
+  }
+
+  #{$element}:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin box-size($w, $h:$w) {
+  width: $w;
+  height: $h;
+}
+  
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin draw-circle($radius, $color) {
+  @include border-radius($radius/2+px);
+  background-color: $color;
+  height:$radius+px;
+  width:$radius+px;
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;
+}
+
+// Absolute positioning
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// Centering mixin
+@mixin content-centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50);
+  }
+}
+
+
+// Functions
+
+// Black and white
+@function black($opacity){
+  @return rgba(0,0,0,$opacity);
+}
+@function white($opacity){
+  @return rgba(255,255,255,$opacity);
+}
+
+// Text link
+@mixin text-link($color) {
+  position: relative;
+  &:hover {
+    color: darken($color, 25%);
+    border-bottom:solid 1px lighten($color, 50%);
+  }
+}
+
+// Button Variant
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+// Shadow
+@mixin shadow-black-small {
+  @include box-shadow(0, 3px, 4px, rgba(0,0,0,.6));
+}
+
+@mixin shadow-black-centered {
+  @include box-shadow(0, 1px, 6px, rgba(0,0,0,.6));
+}
+
+@mixin shadow-black-large {
+  @include box-shadow(0, 19px, 19px, rgba(#000, 0.30));
+}

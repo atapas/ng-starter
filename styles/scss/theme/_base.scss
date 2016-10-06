@@ -1,0 +1,36 @@
+// ------------------------------
+// Package Manager theme
+// ------------------------------
+body {
+	font-family: $base-font-family;
+	font-size: $theme-font-size-base;
+	background: $theme-body-bg;
+	color: $color-secondary-text;
+}
+
+// Blocks
+.inline-block				{ display: inline-block;}
+
+$main-content-neg-margin:	120px;
+
+.jumbotron {
+	background-color: $color-dark-blue;
+	@include background(linear-gradient(160deg, $color-dark-blue, $color-dark-blue-alt, $color-turquoise-alt) left repeat);
+	padding-bottom: $main-content-neg-margin;
+	color: $color-white;
+
+	p {
+		color: rgba($color-white, .7);
+	}
+}
+
+.main-content {
+	@include box-shadow(0, -3px, 14px -4px, rgba(0,0,0,.75));
+	background-color: $color-white;
+	margin-top: -$main-content-neg-margin;
+	padding: $spacing-lg;
+}
+
+footer {
+	margin-top: $spacing-md;
+}

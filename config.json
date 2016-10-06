@@ -1,0 +1,18 @@
+{
+    "dirs": {
+        "tmp" : "_tmp/",
+        "base" : "./",
+        "docs" : "docs",
+        "build": {
+        	"source" : "./",
+        	"dest" : "./"
+        },
+        "bower_components":"./bower_components/",
+
+
+        "dev": {
+        	"source" : "./",
+            "dest" : ""
+        }
+    }
+}
