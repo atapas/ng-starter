@@ -104,6 +104,28 @@ http-server -a localhost -p 8000
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `ng-starter/` directory.
 
+### Packaging & Delivering as a node module(npm)
+
+The `ng-starter` project supports packaging your code as a node module in form of `npm`. You have following ways of doing it:
+
+* Execute the following commands - `grunt prod` will make the build and `npm pack` will create the tar ball package for you.
+
+```
+grunt prod & npm pack
+```
+
+* Alternatively, you can execute the scripts available for windows and linux operating systems.
+
+Windows:
+```
+package.bat
+```
+
+Linux:
+```
+./package.sh
+```
+
 ## Contact
 
 For any more informaion please contact 
