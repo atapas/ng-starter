@@ -43,28 +43,6 @@ Behind the scenes this will do lots house keeping jobs like,
 * Starting an `http-server` and deploy the app.
 * You must see a folder called `node_modules` that contains the npm packages for the tools we need
 
-### Build the Application
-
-We use Grunt as Task runner and created two main grunt targets, i.e, 'grunt dev' and 'grunt prod' respectively.
-
-```
-grunt dev
-```
-Developers should run 'grunt dev' command to build the application. This command must be run along side of the `npm start` command.
-
-If you are a developer who is contributing to this project, you should be doing followings:
-
-* Browse to `ng-starter` folder. 
-* Open a command prompt and do `npm start`. Wait for the application to get deployed and http-server to get started. You will be prompted with a url to access the app. You will have to use this url to launch the app using a web browser.
-* Open another command prompt and do `grunt dev`. This will automatically watch on your all the file changes and do the needful.
-
-As long as both of the command prompts are running successfully, you will be able to change any code and just refresh the browser to see the changes.
-
-```
-grunt prod
-```
-For production build, you should run 'grunt prod' command to build the application. If you are just doing development, you no need to run this command ever.
-
 ### Run the Application
 
 We have preconfigured the project with a simple development web server.  The simplest way to start
@@ -77,11 +55,26 @@ npm start
 Now browse to the app at `http://localhost:8000/`.
 If you are running the application in debug mode, please run the app at `http://localhost:8000/index-debug.html`.
 
-## Directory Layout
+### Build the Application
+
+We use Grunt as Task runner and created two main grunt targets, i.e, 'grunt dev' and 'grunt prod' respectively.
 
 ```
-More to come in this space..
+grunt dev
 ```
+Developers should run `grunt dev` command to build the application. If you are running the application using `npm start` command, you do not need 'grunt dev' at all.
+
+If you are a developer who is contributing to this project, you should be doing followings:
+
+* Browse to `ng-starter` folder. 
+* Open a command prompt and do `npm start`. Wait for the application to get deployed and http-server to get started. You will be prompted with a url to access the app. You will have to use this url to launch the app using a web browser.
+
+As long as the command prompt is running successfully, you will be able to change any code and just refresh the browser to see the changes.
+
+```
+grunt prod
+```
+For production build, you should run 'grunt prod' command to build the application. If you are just doing development, you no need to run this command ever.
 
 ## Serving the Application Files
 
