@@ -12,11 +12,13 @@ To get you started you can simply clone the repository and install the dependenc
 
 ### Prerequisites
 
-You need git to clone the ng-starter repository. You can get git from
+* You need git to clone the ng-starter repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test the project. You must have node.js and
+* We also use a number of node.js tools to initialize and test the project. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+
+* We use [Sass](http://sass-lang.com/install) to keep our CSS Modular. Sass can be installed using ruby gem. Hence install ruby and add it to your os classpath. Once ruby is installed, install sass using the command `gem install sass' (You may have to use sudo in unix)
 
 ### Clone ng-starter
 
